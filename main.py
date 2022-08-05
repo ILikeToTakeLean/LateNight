@@ -1,14 +1,13 @@
-# Copyright (C) 2022-2023 LateNight Development
+# Copyright (C) 2022 LateNight Development
 
 # This file is part of the LateNight project.
 
 # The LateNight project can not be copied and/or distributed without the express
 # permission of the LateNight Development team. 
-import discord
+import discord # Make sure that you have installed discord.py 2.0 (https://github.com/Rapptz/discord.py)
 import os
 import random
 import asyncio
-import keep_alive
 from discord.ext import commands
 
 
@@ -113,12 +112,4 @@ async def reloadbot(ctx):
   else:
     pass
 
-
-
-try:
-    keep_alive.keep_alive()
-    bot.run(os.getenv("TOKEN"))
-except:
-    os.system("kill 1")
-    keep_alive.keep_alive()
-    bot.run(os.getenv("TOKEN"))
+bot.run(os.getenv("TOKEN"))
